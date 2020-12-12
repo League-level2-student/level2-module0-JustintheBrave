@@ -20,12 +20,19 @@ public class _01_RobotRace {
 			robots[i].setSpeed(10);
 		
 		}
-		for (int j = 0; j < 30; j++) {
+		Random ran = new Random();
+		for (int j = 0; j < 70; j++) {
 		for (int i = 0; i < 5; i++) {
-			
-			robots[i].move(30);
-			robots[i].turn(30);
+			int rand = ran.nextInt(20) + 10;
+			robots[i].move(rand);
+			robots[i].turn(rand/3);
+			if(robots[i].getY()>350) {
+				JOptionPane.showMessageDialog(null, "Robot " + i + "" + " wins");
+				System.exit(0);
+			}
 		}
 		}
+		
+		
 		}
 }
